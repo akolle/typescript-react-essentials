@@ -1,9 +1,4 @@
-function Component() {
-  return (
-    <div>
-      <h2>React & Typescript</h2>
-      <h2>Return Type</h2>
-    </div>
-  );
+function Component(): JSX.Element | null | string {
+  return <h2>hello world</h2>
 }
-export default Component;
+export default Component
