@@ -1,9 +1,34 @@
 import { useState } from 'react'
 
+type Link = {
+  id: number
+  url: string
+  text: string
+}
+
+const navLinks: Link[] = [
+  {
+    id: 1,
+    url: 'some url',
+    text: 'some text',
+  },
+  {
+    id: 2,
+    url: 'some url',
+    text: 'some text',
+  },
+  {
+    id: 3,
+    url: 'some url',
+    text: 'some text',
+  },
+]
+
 function Component() {
   const [text, setText] = useState('shakeandbake')
   const [number, setNumber] = useState(1)
   const [list, setList] = useState<string[]>([])
+  const [links, setLinks] = useState<Link[]>(navLinks)
 
   return (
     <div>
@@ -14,9 +39,18 @@ function Component() {
           //setText('andy')
           //setNumber(2)
           //setList(['hello', 1])
+          setLinks([...links, { id: 4, url: 'hello', text: 'hello' }])
         }}
       >
-        {number}
+        {links.map((link) => {
+          return (
+            <div>
+              <h1>{link.id}</h1>
+              <h1>{link.text}</h1>
+              <h1>{link.url}</h1>
+            </div>
+          )
+        })}
       </button>
     </div>
   )
