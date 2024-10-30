@@ -46,8 +46,6 @@ function Component() {
           return (
             <div>
               <h1>{link.id}</h1>
-              <h1>{link.text}</h1>
-              <h1>{link.url}</h1>
             </div>
           )
         })}
