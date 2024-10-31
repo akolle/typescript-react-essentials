@@ -1,9 +1,12 @@
-import Component from './starter/04-events/index'
+// import Component from './final/05-challenge/index'
+import Component from './starter/05-challenge/index'
 
 function App() {
   return (
     <main>
-      <Component />
+      {/* <Component type="basic" name="susan" />
+      <Component type='advanced' name="susan" email="test@gmail.com" /> */}
+      <Component type="advanced" />
     </main>
   )
 }
