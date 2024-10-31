@@ -4,9 +4,8 @@ import Component from './starter/05-challenge/index'
 function App() {
   return (
     <main>
-      {/* <Component type="basic" name="susan" />
-      <Component type='advanced' name="susan" email="test@gmail.com" /> */}
-      <Component type="advanced" />
+      <Component type="basic" name="andy" />
+      <Component type="advanced" name="em" email="em@gmail.com" />
     </main>
   )
 }
