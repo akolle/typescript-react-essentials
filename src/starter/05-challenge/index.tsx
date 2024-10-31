@@ -1,18 +1,28 @@
-type ComponentProps = {
-  type: 'advanced' | 'basic'
+type BasicType = {
+  type: 'basic'
   name: string
-  email?: string
 }
 
-function Component({ type, name, email }: ComponentProps) {
-  return type === 'basic' ? (
-    <div className="alert-success">
-      <h2>User: {name}</h2>
+type AdvancedType = {
+  type: 'advanced'
+  name: string
+  email: string
+}
+
+type ProfileCardProps = BasicType | AdvancedType
+
+function Component(props: ProfileCardProps) {
+  let nameOfClass: string =
+    props.type === 'basic' ? 'alert alert-success' : 'alert alert-danger'
+
+  return props.type === 'basic' ? (
+    <div className={nameOfClass}>
+      <h2>User: {props.name}</h2>
     </div>
   ) : (
-    <div className="alert-danger">
-      <h2>User: {name}</h2>
-      <h2>Email: {email}</h2>
+    <div className={nameOfClass}>
+      <h2>User: {props.name}</h2>
+      <h2>Email: {props.email}</h2>
     </div>
   )
 }
