@@ -1,10 +1,12 @@
 import { createContext, useContext, useState } from 'react'
 
-const ThemeProviderContext = createContext<string | undefined>(undefined)
+const ThemeProviderContext = createContext<{ name: string } | undefined>(
+  undefined
+)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProviderContext.Provider value="hello">
+    <ThemeProviderContext.Provider value={{ name: 'hello world' }}>
       {children}
     </ThemeProviderContext.Provider>
   )
